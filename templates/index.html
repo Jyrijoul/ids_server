@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>KV.ee prices</title>
+</head>
+<body>
+<div class="m-4">
+    <h3 class="mb-4">Predict the price of the following listing:</h3>
+    <table class="table table-sm">
+        <tbody>
+        <tr>
+            <th>Title</th>
+            <td>{{listing['Title']}}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{listing['Description']}}</td>
+        </tr>
+        <tr>
+            <th>Link</th>
+            <td>{{listing['Link']}}</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>{{listing['Location']}}</td>
+        </tr>
+        <tr>
+            <th>Rooms</th>
+            <td>{{listing['Rooms']}}</td>
+        </tr>
+        <tr>
+            <th>Total area</th>
+            <td>{{listing['Total area']}}</td>
+        </tr>
+        <tr>
+            <th>Number of floors</th>
+            <td>{{listing['Number of floors']}}</td>
+        </tr>
+        <tr>
+            <th>Condition</th>
+            <td>{{listing['Condition']}}</td>
+        </tr>
+        <tr>
+            <th>Readiness</th>
+            <td>{{listing['Readiness']}}</td>
+        </tr>
+        <tr>
+            <th>Ground area</th>
+            <td>{{listing['Ground area']}}</td>
+        </tr>
+        <tr>
+            <th>Energy mark</th>
+            <td>{{listing['Energy mark']}}</td>
+        </tr>
+        <tr>
+            <th>Extra information</th>
+            <td>{{listing['Lisainfo']}}</td>
+        </tr>
+        <tr>
+            <th>Neighbourhood</th>
+            <td>{{listing['Neighbourhood']}}</td>
+        </tr>
+        <tr>
+            <th>Bedrooms</th>
+            <td>{{listing['Bedrooms']}}</td>
+        </tr>
+        <tr>
+            <th>Built in year</th>
+            <td>{{listing['Built in year']}}</td>
+        </tr>
+        <tr>
+            <th>Ownership</th>
+            <td>{{listing['Ownership']}}</td>
+        </tr>
+        <tr>
+            <th>Kitchen</th>
+            <td>{{listing['Kitchen']}}</td>
+        </tr>
+        <tr>
+            <th>Sanitary arrangements</th>
+            <td>{{listing['Sanitary arrangements']}}</td>
+        </tr>
+        <tr>
+            <th>Heating and ventilation</th>
+            <td>{{listing['Heating and ventilation']}}</td>
+        </tr>
+        <tr>
+            <th>Communications and security</th>
+            <td>{{listing['Communications and security']}}</td>
+        </tr>
+        <tr>
+            <th>Additional information</th>
+            <td>{{listing['Additional information']}}</td>
+        </tr>
+        <tr>
+            <th>This floor/Number of floors</th>
+            <td>{{listing['This floor/Number of floors']}}</td>
+        </tr>
+        <tr>
+            <th>Population</th>
+            <td>{{round(listing['population'])}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mt-5">
+        <form action="/" method="post">
+            <p>Enter the price:</p>
+            <p><input type="text" name="price"/></p>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <h3 class="mt-5">Results:</h3>
+        <table class="table table-sm">
+            <tbody>
+            <tr>
+                <th>Actual price</th>
+                <td>{{truth}}</td>
+            </tr>
+            <tr>
+                <th>Model's prediction</th>
+                <td>{{prediction_model}}</td>
+            </tr>
+            <tr>
+                <th>Your prediction</th>
+                <td>{{prediction_human}}</td>
+            </tr>
+            <tr>
+                <th>Model's R2 score</th>
+                <td>{{model_score}}</td>
+            </tr>
+            <tr>
+                <th>Your R2 score</th>
+                <td>{{human_score}}</td>
+            </tr>
+            <tr>
+                <th>Link to the listing</th>
+                <td><a href="{{link}}" target=”_blank”>{{link}}</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
